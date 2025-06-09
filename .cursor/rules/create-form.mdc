@@ -1,0 +1,45 @@
+---
+description: when it is needed to create a form
+globs: *.tsx
+alwaysApply: false
+---
+Forms are used to gather data thanks input. You must always follow the rules.
+
+## naming rule
+
+All Forms must start with uppercase and be suffixed by `Form` :
+
+* UserForm
+* CreateUserForm
+* UpdateUserForm
+
+## rules 
+- Be sure that the zod schema exist, if no create it following [zod-schema.mdc](mdc:.cursor/rules/zod-schema.mdc)
+
+- Then use useZodForm: 
+```ts 
+import {useZodForm,
+} from "@/components/ui/form";
+
+const form = useZodForm({
+    schema: NewOrgsSchema,
+  });
+
+```
+- Use the form and all attributes needed from [form.tsx](mdc:src/components/ui/form.tsx)
+- The submiting button must be [submit-button.tsx](mdc:src/features/form/submit-button.tsx)
+- don't use 
+```ts
+<Form.Field/>
+```
+but use 
+```ts
+import {FormField} from "@/components/ui/form"
+
+<FormField/>
+```
+as well for FormItem, FormMessage, FormControl, FormLabel
+
+## Code example 
+
+An example of a good form is [new-org-form.tsx](mdc:app/orgs/new/new-org-form.tsx)

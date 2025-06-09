@@ -1,0 +1,19 @@
+---
+description: When creating a new page router
+globs: page.tsx
+alwaysApply: false
+---
+Here is how you need to create a new routing page 
+
+
+# Rules
+
+- You always export like that
+ ```ts 
+ export default async function RoutePage() 
+ ```
+- If needed add Params from [next.ts](mdc:src/types/next.ts):
+```ts 
+import {PageParams} from "@/types/next"
+```
+- Use the layout in [layout.tsx](mdc:src/features/page/layout.tsx)

@@ -1,0 +1,11 @@
+---
+description: Creating auth or managing the authentication
+globs: 
+alwaysApply: false
+---
+Use always better-auth.
+
+## Creating authentication
+
+be sure that the model in prisma is like in the docs
+
